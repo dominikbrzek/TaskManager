@@ -1,9 +1,6 @@
-package com.example.taskmanager.adapter;
+package com.example.taskmanager.adapter.repository;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
@@ -16,6 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Table(name = "TASKS")
 public class TaskEntity {
 
     @Id
@@ -34,7 +32,8 @@ public class TaskEntity {
     @Column(name = "DEADLINE")
     private LocalDateTime deadline;
 
+    @Enumerated
     @Column(name = "STATUS")
-    private String status;
+    private TaskStatus status;
 
 }

@@ -2,11 +2,11 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   datasource:
     url: ${database.url}
     username: ${database.username}
     password: ${database.password}
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   flyway:
     enabled: false

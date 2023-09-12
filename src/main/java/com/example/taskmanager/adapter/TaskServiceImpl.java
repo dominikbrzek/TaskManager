@@ -1,5 +1,7 @@
 package com.example.taskmanager.adapter;
 
+import com.example.taskmanager.adapter.repository.TaskEntity;
+import com.example.taskmanager.adapter.repository.TaskRepository;
 import com.example.taskmanager.application.TaskService;
 import com.example.taskmanager.application.response.TaskDetails;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +39,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void updateTask(TaskDetails taskDetails) {
         log.info("Update task with id: {}", taskDetails.getId());
-        var entity = repository.findById(taskDetails.getId()).orElseThrow();
+        var entity = repository.findById(taskDetails.getId()).orElseThrow(() ->
+                new IllegalArgumentException("Task with given Id not exists"));
         updateEntityAndSave(taskDetails, entity);
     }
 

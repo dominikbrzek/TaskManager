@@ -31,7 +31,7 @@ public class TaskController {
         return ResponseEntity.ok(null);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public ResponseEntity<Void> updateTask(@RequestBody TaskDetails request) {
         service.updateTask(request);
         return ResponseEntity.ok(null);

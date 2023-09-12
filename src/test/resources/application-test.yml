@@ -10,4 +10,4 @@ spring:
     password: password
     driver-class-name: org.h2.Driver
   flyway:
-    enabled: false
+    enabled: true
