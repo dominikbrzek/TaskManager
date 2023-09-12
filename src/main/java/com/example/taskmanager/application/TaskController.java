@@ -11,6 +11,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/v1/tasks")
+@CrossOrigin("http://localhost:63343/")
 public class TaskController {
 
     private final TaskService service;
