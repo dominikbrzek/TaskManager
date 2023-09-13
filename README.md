@@ -28,6 +28,11 @@ TaskManager is a task management application that allows users to create, view, 
 - **Endpoint:** `/api/v1/tasks/{id}`
 - **Description:** This endpoint allows you to delete a specific task by its unique ID.
 
+### Finish Task by ID
+- **HTTP Method:** PUT
+- **Endpoint:** `/api/v1/tasks/{id}`
+- **Description:** This endpoint allows you to change status to FINISHED of a specific task by its unique ID.
+
 ### TaskDetails class
 - **UUID id**
 - **String title**

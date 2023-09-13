@@ -43,4 +43,10 @@ public class TaskController {
         service.deleteTask(id);
         return ResponseEntity.ok(null);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> finishTask(@PathVariable(name = "id") UUID id) {
+        service.finishTask(id);
+        return ResponseEntity.ok(null);
+    }
 }

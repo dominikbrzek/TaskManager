@@ -16,4 +16,6 @@ public interface TaskService {
     void createTask(TaskDetails taskDetails);
 
     void deleteTask(UUID id);
+
+    void finishTask(UUID id);
 }
