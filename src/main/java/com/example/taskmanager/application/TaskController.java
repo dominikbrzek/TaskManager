@@ -21,6 +21,11 @@ public class TaskController {
         return ResponseEntity.ok(service.getTasks());
     }
 
+    @GetMapping("/sorted/{filter}")
+    public ResponseEntity<List<TaskDetails>> getSortedTasks(@PathVariable("filter") String filter) {
+        return ResponseEntity.ok(service.getSortedTasks(filter));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<TaskDetails> getTaskDetails(@PathVariable(name = "id") UUID id) {
         return ResponseEntity.ok(service.getTaskDetails(id));

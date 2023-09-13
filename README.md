@@ -33,6 +33,12 @@ TaskManager is a task management application that allows users to create, view, 
 - **Endpoint:** `/api/v1/tasks/{id}`
 - **Description:** This endpoint allows you to change status to FINISHED of a specific task by its unique ID.
 
+### Get sorted tasks
+
+- **HTTP Method:** GET
+- **Endpoint:** `/api/v1/tasks/sorted/{filter}`
+- **Description:** This endpoint allows you to search for tasks sorted by given column name.
+
 ### TaskDetails class
 - **UUID id**
 - **String title**
@@ -49,4 +55,7 @@ TaskManager is a task management application that allows users to create, view, 
 The controller is configured to allow cross-origin requests from "http://localhost:63343/". This is useful when you want to make requests to this API from a web application running on a different domain.
 
 ## Usage
-To use these endpoints, you can make HTTP requests to the specified URLs using tools like `curl`, Postman, or from your frontend application.
+
+To use these endpoints, you can make HTTP requests to the specified URLs using tools like `curl`, Postman, or from
+frontend application written in TaskManagerFront repository.
+

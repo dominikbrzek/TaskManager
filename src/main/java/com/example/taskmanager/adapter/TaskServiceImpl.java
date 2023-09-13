@@ -7,6 +7,7 @@ import com.example.taskmanager.application.TaskService;
 import com.example.taskmanager.application.response.TaskDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,6 +26,13 @@ public class TaskServiceImpl implements TaskService {
     public List<TaskDetails> getTasks() {
         log.info("Get all tasks");
         return toStreamSafe(repository.findAll())
+                .map(this::mapFromEntity)
+                .toList();
+    }
+
+    @Override
+    public List<TaskDetails> getSortedTasks(String filterName) {
+        return toStreamSafe(repository.findAll(Sort.by(Sort.Direction.ASC, filterName)))
                 .map(this::mapFromEntity)
                 .toList();
     }

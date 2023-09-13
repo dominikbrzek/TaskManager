@@ -1,0 +1,37 @@
+<script>
+    $(document).ready(function () {
+        $("#task-list").click(function () {
+            window.location.href = "./index.html";
+        })
+        $("#add-task").click(function () {
+            window.location.href = "./task-details.html";
+        })
+    })
+</script>
+<header>
+    <h1>TaskManager</h1>
+    <input id="task-list" type="button" value="Task list">
+    <input id="add-task" type="button" value="Add new task">
+</header>
+
+<style>
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+    }
+
+    #task-list, #add-task {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        margin: 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>

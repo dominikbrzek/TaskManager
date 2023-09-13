@@ -9,6 +9,8 @@ public interface TaskService {
 
     List<TaskDetails> getTasks();
 
+    List<TaskDetails> getSortedTasks(String filterName);
+
     TaskDetails getTaskDetails(UUID id);
 
     void updateTask(TaskDetails taskDetails);
